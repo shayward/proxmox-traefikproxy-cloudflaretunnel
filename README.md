@@ -206,15 +206,16 @@ nano /etc/cloudflared/config.yml
 # Add to the configuration file
 tunnel: TUNNEL_ID
 credentials-file: /root/.cloudflared/TUNNEL_ID.json
+
 ingress:
 # Rule 1: Route traffic for app.yourdomain.com to a local service
-- hostname: example.com
-service: http://TRAEFIK_IP:8080
+  - hostname: example.com
+  service: http://TRAEFIK_IP:8080
 # Rule 2: Route traffic for another.yourdomain.com to another service
-- hostname: another.example.com
-service: http://localhost:8080
+  - hostname: another.example.com
+  service: http://localhost:8080
 # Rule 3: Catch-all rule for all other traffic to a default service
-- service: http://localhost:80
+  - service: http://localhost:80
 ~~~
 
 Paste the Cloudflare configuration (check Cloudflare Tunnel Configuration) and replace:
