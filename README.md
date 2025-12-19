@@ -202,6 +202,12 @@ echo "Tunnel ID: $TUNNEL_ID"
 
 # Create configuration file
 nano /etc/cloudflared/config.yml
+
+# Add to the configuration file
+tunnel: <Tunnel-UUID>
+credentials-file: /root/.cloudflared/<Tunnel-UUID>.json
+warp-routing:
+  enabled: true
 ~~~
 
 Paste the Cloudflare configuration (check Cloudflare Tunnel Configuration) and replace:
